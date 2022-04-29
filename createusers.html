@@ -8,6 +8,7 @@
     <title>SASSI HOLFORD ADMIN</title>
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/createusers.css">
     <link rel="shortcut icon" href="./img/index/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,21 +19,7 @@
 
 <body>
 
-    <!-- Nav Bar begins -->
-
-    <!-- <section>
-        <div class="navbar">
-            <h1><i class="fa-solid fa-user-secret"></i>SASSI HOLFORD ADMIN</h1>
-            <div class="search">
-                <span><i class="fa-search fa-solid fa-2x"></i></span><input type="search" name="search" id="search">
-            </div>
-            <div class="acct">
-                <a href="#">My Account</a>
-            </div>
-        </div>
-
-        
-    </section> -->
+  
 
     <!-- <section> -->
     <input type="checkbox" id="nav-toggle"> 
@@ -42,9 +29,9 @@
         </div>
         <div class="side_menu">
             <ul>
-                <li><a href="index.html" class="active"><i class="fa-solid fa-chart-column"></i><span>DASHBOARD</span></a></li>
+                <li><a href="index.html"><i class="fa-solid fa-chart-column"></i><span>DASHBOARD</span></a></li>
                 <li><a href="allusers.html"><i class="fa-solid fa-users"></i><span>ALL USERS</span></a></li>
-                <li><a href="createusers.html"><i class="fa-solid fa-user-plus"></i><span>CREATE USERS</span></a></li>
+                <li><a href="createusers.html" class="active"><i class="fa-solid fa-user-plus"></i><span>CREATE USERS</span></a></li>
                 <li><a href="allproducts.html"><i class="fa-solid fa-clipboard-list"></i><span>ALL PRODUCTS</span></a></li>
                 <li><a href="createproducts.html"><i class="fa-solid fa-add"></i><span>CREATE PRODUCTS</span></a></li>
                 <li><a href="allorders.html"><i class="fa-solid fa-shipping-fast"></i><span>ALL ORDERS</span></a></li>
@@ -79,51 +66,32 @@
 
         <main>
 
-            <div class="cards">
+           <h1>Create Users</h1>
 
-                <div class="card_single">
-                    <div>
-                        <h1>Total Products</h1>
-                        <span>40</span>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-clipboard-list"></i>
-                    </div>
-                </div>
-                <div class="card_single">
-                    <div>
-                        <h1>Total Users</h1>
-                        <span>15</span>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-users"></i>
-                    </div>
-                </div>
-                <div class="card_single">
-                    <div>
-                        <h1>Total Price</h1>
-                        <span>$250</span>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-filter-circle-dollar"></i>
-                    </div>
-                </div>
-                <div class="card_single">
-                    <div>
-                        <h1>Total Orders</h1>
-                        <span>20</span>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-shipping-fast"></i>
-                    </div>
-                </div>
-    
-            </div>
+           <form action="">
+
+             <label for="name">User Name
+                 <input type="text" name="name" id="name" placeholder="User Name">
+             </label>
+               
+             <label for="password">Password
+                 <input type="password" name="password" id="password" placeholder="Password">
+             </label>
+               
+             <label for="email">Email
+                 <input type="email" name="email" id="email" placeholder="Email">
+                 
+             </label>
+               
+             <label for="phone">Phone Number
+                 <input type="text" name="phoneNum" id="phoneNum" placeholder="Phone Number">
+             </label>
+
+             <button type="submit">SUBMIT</button>
+           </form>
 
         </main>
     </div>
-
-
 </body>
 
 </html>

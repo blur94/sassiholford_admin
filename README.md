@@ -2,7 +2,7 @@
 This will serve as the admin panel for my sassiholford project.
 
 
-What is to be included in the Admin page?
+# What is to be included in the Admin page?
 
 LEFT NAVIGATION:
 DASHBOARD----

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SASSI HOLFORD ADMIN</title>
     <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="/css/allusers.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="./img/index/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,8 +43,8 @@
         </div>
         <div class="side_menu">
             <ul>
-                <li><a href="index.html" class="active"><i class="fa-solid fa-chart-column"></i><span>DASHBOARD</span></a></li>
-                <li><a href="allusers.html"><i class="fa-solid fa-users"></i><span>ALL USERS</span></a></li>
+                <li><a href="index.html"><i class="fa-solid fa-chart-column"></i><span>DASHBOARD</span></a></li>
+                <li><a href="allusers.html" class="active"><i class="fa-solid fa-users"></i><span>ALL USERS</span></a></li>
                 <li><a href="createusers.html"><i class="fa-solid fa-user-plus"></i><span>CREATE USERS</span></a></li>
                 <li><a href="allproducts.html"><i class="fa-solid fa-clipboard-list"></i><span>ALL PRODUCTS</span></a></li>
                 <li><a href="createproducts.html"><i class="fa-solid fa-add"></i><span>CREATE PRODUCTS</span></a></li>
@@ -76,54 +77,36 @@
                 </div>
             </div>
         </header>
-
-        <main>
-
-            <div class="cards">
-
-                <div class="card_single">
-                    <div>
-                        <h1>Total Products</h1>
-                        <span>40</span>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-clipboard-list"></i>
-                    </div>
-                </div>
-                <div class="card_single">
-                    <div>
-                        <h1>Total Users</h1>
-                        <span>15</span>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-users"></i>
-                    </div>
-                </div>
-                <div class="card_single">
-                    <div>
-                        <h1>Total Price</h1>
-                        <span>$250</span>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-filter-circle-dollar"></i>
-                    </div>
-                </div>
-                <div class="card_single">
-                    <div>
-                        <h1>Total Orders</h1>
-                        <span>20</span>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-shipping-fast"></i>
-                    </div>
-                </div>
-    
-            </div>
-
-        </main>
-    </div>
-
-
+      <main>
+          <h1>A Table of All Users</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Gilead Odo</td>
+                    <td>odogilead@gmail.com</td>
+                    <td>08183406181</td>
+                    <td><a href="#">Edit</a> / <a href="#">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Justice Odo</td>
+                    <td>odojustice@gmail.com</td>
+                    <td>08183406181</td>
+                    <td><a href="#">Edit</a> / <a href="#">Delete</a></td>
+                </tr>
+            </tbody>
+        </table> 
+      </main>
 </body>
 
 </html>
