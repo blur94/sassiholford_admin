@@ -67,6 +67,7 @@
   margin-left: 345px;
 }
 header {
+  position: fixed;
   transition: left 300ms;
   position: fixed;
   left: 345px;
