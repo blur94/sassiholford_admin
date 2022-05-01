@@ -69,11 +69,10 @@
 header {
   position: fixed;
   transition: left 300ms;
-  position: fixed;
   left: 345px;
   width: calc(100% - 345px);
   top: 0;
-  z-index: 100;
+  z-index: 0;
   display: flex;
   justify-content: space-between;
   padding: 1rem 1.5rem;
@@ -82,10 +81,13 @@ header {
 main {
   transition: left 300ms;
   left: 345px;
+  z-index: 100;
+  top: 10;
   margin-top: 80px;
   padding: 2rem 1.5rem;
   background: #f1f5f9;
   min-height: calc(100vh - 90px);
+  
 }
 #nav-toggle {
   display: none;
@@ -109,9 +111,11 @@ header label i {
   font-size: 1.7rem;
   padding-right: 1rem;
 }
-#nav-toggle:checked ~ .main_content header .search_wrapper{
-  width: 40rem;
-  font-size: 10rem;
+@media (min-width: 1440px) {
+  #nav-toggle:checked ~ .main_content header .search_wrapper{
+    width: 40rem;
+    font-size: 10rem;
+  }
 }
 .search_wrapper {
   border: 1px solid #ccc;
@@ -128,8 +132,10 @@ header label i {
 }
 .search_wrapper input {
   height: 100%;
+  background-color: transparent;
   padding: 0.5rem;
   border: none;
+  color: var(--main-color);
   outline: none;
 }
 .user_wrapper {
@@ -190,4 +196,9 @@ thead th{
 }
 tbody{
   color: var(--color-dark);
+}
+@media (max-width: 1024px) {
+  .main_content header h2 span{
+    display: none;
+  }
 }
