@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SASSI HOLFORD ADMIN</title>
     <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/createusers.css">
     <link rel="stylesheet" href="/css/allusers.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="./img/index/favicon.ico" type="image/x-icon" />
@@ -19,26 +20,12 @@
 
 <body>
 
-    <!-- Nav Bar begins -->
-
-    <!-- <section>
-        <div class="navbar">
-            <h1><i class="fa-solid fa-user-secret"></i>SASSI HOLFORD ADMIN</h1>
-            <div class="search">
-                <span><i class="fa-search fa-solid fa-2x"></i></span><input type="search" name="search" id="search">
-            </div>
-            <div class="acct">
-                <a href="#">My Account</a>
-            </div>
-        </div>
-
-        
-    </section> -->
+   
 
     <!-- <section> -->
     <input type="checkbox" id="nav-toggle"> 
-    <div class="sidebar">
-        <div class="side_brand">
+    <div class="sidebar" id="sidebar">
+        <!-- <div class="side_brand">
             <h2><i class="fa-solid fa-user-gear"></i> <span>SASSI HOLFORD ADMIN</span></h2>
         </div>
         <div class="side_menu">
@@ -50,7 +37,7 @@
                 <li><a href="createproducts.html"><i class="fa-solid fa-add"></i><span>CREATE PRODUCTS</span></a></li>
                 <li><a href="allorders.html"><i class="fa-solid fa-shipping-fast"></i><span>ALL ORDERS</span></a></li>
             </ul>
-        </div>
+        </div> -->
     </div>
     <!-- </section> -->
 
@@ -78,6 +65,28 @@
             </div>
         </header>
       <main>
+
+        <form action="" id="updateUserForm">
+
+            <label for="name">User Name
+                <input type="text" name="name" id="name" placeholder="User Name">
+            </label>
+              
+            <label for="password">Password
+                <input type="password" name="password" id="password" placeholder="Password">
+            </label>
+              
+            <label for="email">Email
+                <input type="email" name="email" id="email" placeholder="Email">
+                
+            </label>
+              
+            <label for="phone">Phone Number
+                <input type="text" name="phoneNum" id="phoneNum" placeholder="Phone Number">
+            </label>
+
+            <button type="submit" id="regUserBtn">SUBMIT</button>
+          </form>        
           <h1>A Table of All Users</h1>
         <table>
             <thead>
@@ -89,7 +98,7 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="allUsersView">
                 <tr>
                     <td>1</td>
                     <td>Gilead Odo</td>
@@ -107,6 +116,10 @@
             </tbody>
         </table> 
       </main>
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/user.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

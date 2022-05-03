@@ -44,7 +44,7 @@
   color: #fff;
   font-size: 1.1rem;
 }
-.side_menu a.active {
+a.active {
   background: #fff;
   padding-top: 1rem;
   padding-bottom: 1rem;
