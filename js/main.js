@@ -19,69 +19,101 @@ sideBar.html(`
     <li><a href="allorders.html" id="allOrd"><i class="fa-solid fa-shipping-fast"></i><span>ALL ORDERS</span></a></li>
 </ul>
 </div>
-`)
+`);
 
 // sideBar.on('click', function () {
 //     $("#sideMenu-Dash").addClass("active")
 // })
+
+window.onload = function () {
+  const uid = sessionStorage.getItem("active");
+  if (!uid) return $("#dash").toggleClass("active");
+
+  $(uid).toggleClass("active");
+};
+
+const navBarLinksIDs = [
+  "#dash",
+  "#allUser",
+  "#createUser",
+  "#allProd",
+  "#createProd",
+  "#allOrd",
+];
+
+function handleActiveLink(uid) {
+  navBarLinksIDs.forEach((id) => {
+    if (uid === id) {
+      sessionStorage.setItem("active", uid);
+      $(uid).toggleClass("active");
+    } else {
+      $(id).removeClass("active");
+    }
+  });
+}
+
+navBarLinksIDs.forEach((id) => {
+  $(id).on("click", function () {
+    handleActiveLink(id);
+  });
+});
+
 // For Dashboard
-$("#dash").on('click', function () {
-    $(this).toggleClass("active")
-    $("#allUser").removeClass("active")
-    $("#createUser").removeClass("active")
-    $("#allProd").removeClass("active")
-    $("#createProd").removeClass("active")
-    $("#allOrd").removeClass("active")
-})
+// $("#dash").on('click', function () {
+//   $(this).toggleClass("active")
+//   $("#allUser").removeClass("active")
+//   $("#createUser").removeClass("active")
+//   $("#allProd").removeClass("active")
+//   $("#createProd").removeClass("active")
+//   $("#allOrd").removeClass("active")
+// })
 
-// For All users
-$("#allUser").on('click', function () {
-    $("#dash").removeClass("active")
-    $(this).addClass("active")
-    $("#createUser").removeClass("active")
-    $("#allProd").removeClass("active")
-    $("#createProd").removeClass("active")
-    $("#allOrd").removeClass("active")
-})
+// // For All users
+// $("#allUser").on('click', function () {
+//   $("#dash").removeClass("active")
+//   $(this).addClass("active")
+//   $("#createUser").removeClass("active")
+//   $("#allProd").removeClass("active")
+//   $("#createProd").removeClass("active")
+//   $("#allOrd").removeClass("active")
+// })
 
-// For Create users
-$("#createUser").on('click', function () {
-    $("#dash").removeClass("active")
-    $("#allUser").removeClass("active")
-    $(this).addClass("active")
-    $("#allProd").removeClass("active")
-    $("#createProd").removeClass("active")
-    $("#allOrd").removeClass("active")
-})
+// // For Create users
+// $("#createUser").on('click', function () {
+//   $("#dash").removeClass("active")
+//   $("#allUser").removeClass("active")
+//   $(this).addClass("active")
+//   $("#allProd").removeClass("active")
+//   $("#createProd").removeClass("active")
+//   $("#allOrd").removeClass("active")
+// })
 
-// for all products
-$("#allProd").on('click', function () {
-    $("#dash").removeClass("active")
-    $("#allUser").removeClass("active")
-    $("#createUser").removeClass("active")
-    $(this).addClass("active")
-    $("#createProd").removeClass("active")
-    $("#allOrd").removeClass("active")
-})
+// // for all products
+// $("#allProd").on("click", function () {
+//   $("#dash").removeClass("active");
+//   $("#allUser").removeClass("active");
+//   $("#createUser").removeClass("active");
+//   $(this).addClass("active");
+//   $("#createProd").removeClass("active");
+//   $("#allOrd").removeClass("active");
+// });
 
-// for create products
-$("#createProd").on('click', function () {
-    $("#dash").removeClass("active")
-    $("#allUser").removeClass("active")
-    $("#createUser").removeClass("active")
-    $("#allProd").removeClass("active")
-    $(this).addClass("active")
-    $("#allOrd").removeClass("active")
-})
+// // for create products
+// $("#createProd").on("click", function () {
+//   $("#dash").removeClass("active");
+//   $("#allUser").removeClass("active");
+//   $("#createUser").removeClass("active");
+//   $("#allProd").removeClass("active");
+//   $(this).addClass("active");
+//   $("#allOrd").removeClass("active");
+// });
 
-// for all orders
-$("#allOrd").on('click', function () {
-    $("#dash").removeClass("active")
-    $("#allUser").removeClass("active")
-    $("#createUser").removeClass("active")
-    $("#allProd").removeClass("active")
-    $("#createProd").removeClass("active")
-    $(this).addClass("active")
-})
-
-
+// // for all orders
+// $("#allOrd").on("click", function () {
+//   $("#dash").removeClass("active");
+//   $("#allUser").removeClass("active");
+//   $("#createUser").removeClass("active");
+//   $("#allProd").removeClass("active");
+//   $("#createProd").removeClass("active");
+//   $(this).addClass("active");
+// });
