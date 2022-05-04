@@ -82,11 +82,11 @@ main {
   transition: left 300ms;
   left: 345px;
   z-index: 100;
-  top: 10;
+  top: 0;
   margin-top: 80px;
   padding: 2rem 1.5rem;
   background: #f1f5f9;
-  min-height: calc(100vh - 90px);
+  /* min-height: calc(100vh - 90px); */
   
 }
 #nav-toggle {

@@ -67,34 +67,34 @@
 
             <h1>Create Users</h1>
 
-            <form action="">
+            <form method="post" action="http://159.65.21.42:9000/create/product" enctype="multipart/form-data">
  
               <label for="prodName">Product Name
-                  <input type="text" name="prodName" id="prodName" placeholder="Enter Product Name...">
+                  <input type="text" name="prodName" id="prodName" placeholder="Enter Product Name..."/>
               </label>
                 
               <label for="prodDesc">Product Description
-                  <input type="text" name="prodDesc" id="prodDesc" placeholder="Enter Product Description...">
+                  <input type="text" name="prodDesc" id="prodDesc" placeholder="Enter Product Description..."/>
               </label>
                 
               <div class="priqua">
                 <label for="price">Price
-                    <input type="number" name="price"prodQuan id="price" placeholder="Price">
+                    <input type="number" name="price"prodQuan id="price" placeholder="Price"/>
                     
                 </label>
                   
                 <label for="prodQuan">Quantity
-                    <input type="number" name="prodQuan" id="prodQuan" placeholder="Quantity">
+                    <input type="number" name="prodQuan" id="prodQuan" placeholder="Quantity"/>
                 </label>
               </div>
 
               <div class="catimg">
                   <label for="image">Product Image
-                    <input type="file" name="image" id="image">
+                    <input type="file" name="image" id="image"/>
                   </label>
                   
-                  <label for="cat">Category
-                      <select name="cat" id="cat">
+                  <label for="category">Category
+                      <select name="category" id="category">
                           <option value="">Category</option>
 
                           <option value="balm_slider">Balm Slider</option>
@@ -107,7 +107,7 @@
                   </label>
               </div>
  
-              <button type="submit">SUBMIT</button>
+              <button>SUBMIT</button>
             </form>            
 
         </main>
