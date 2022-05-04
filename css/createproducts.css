@@ -43,7 +43,7 @@
     padding: 2rem 1.5rem;
     background: #fff;
     height: calc(100vh - 80px);
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   main button {
     margin: 0 auto;
