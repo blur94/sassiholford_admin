@@ -1,15 +1,5 @@
 
 //Variable declaration in jquery
-let fName = $('#name'),
-  age = $('#age'),
-  email = $('#email'),
-  phoneNumber = $('#phoneNumber'),
-  regBtn = $('#regBtn'),
-  productIndex,
-  products = [],
-  globalIpAddress="http://159.65.21.42:9000";
-
-
 let sideBar = $("#sidebar");
 
 sideBar.html(`
@@ -32,11 +22,7 @@ sideBar.html(`
 </ul>
 </div>
 `);
-loadProducts()
 
-// sideBar.on('click', function () {
-//     $("#sideMenu-Dash").addClass("active")
-// })
 
 window.onload = function () {
   const uid = sessionStorage.getItem("active");
@@ -70,59 +56,14 @@ navBarLinksIDs.forEach((id) => {
     handleActiveLink(id);
   });
 });
-loadProducts()
 
-function loadProducts() {
-    // load products
-    $.ajax({
-      type: 'GET',
-      url: `${globalIpAddress}/products`,
-      success: function (response) {
-        products = response;
-        let rows = '';
-        let sliderData=""
-        for (let index = 0; index < products.length; index++) {
-  
-            if(products[index]['category']== "balm_slider" || products[index]['category']== "balm_shop_prod" ){
-              rows += ` 
-              <div class="product_single">
-                    <img src="${globalIpAddress}${products[index]['image']}" alt="">
-                    <h2>${products[index]['name']}</h2>
-                    <div class="priqua">
-                        <label for="price">PRICE
-                            <p>&pound;${products[index]['price']}</p>
-                        </label>
-                        <label for="price">QUANTITY
-                            <p>${products[index]['quantity']}</p>
-                        </label>
-                    </div>
-                    <div class="edbtns">
-                        <button>Edit</button>
-                        <button>Delete</button>
-                    </div>
-                </div>`;
-            }
-  
-            if(products[index]['category']== "balm_slider"){
-              sliderData+=``
-            }
-         
-        }
-  
-        $('#product_grid').html(rows);
-        $('#sliderSection').html(sliderData)
-      },
-      error: function (err) {
-        console.log(err);
-      },
-    });
   
     // if (stuData != null) {
     //   products = JSON.parse(stuData);
     // }
   
     // console.log(stuData);
-  }
+  // }
   
   function clearForm() {
     fName.val('');

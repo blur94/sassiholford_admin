@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SASSI HOLFORD ADMIN</title>
     <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/createproducts.css">
     <link rel="stylesheet" href="css/allproducts.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="./img/index/favicon.ico" type="image/x-icon" />
@@ -66,8 +67,57 @@
 
         <main>
 
+            <div id="updateProductForm">
+
+                <h1>Create Product</h1>
+
+            <form method="post" action="http://159.65.21.42:9000/create/product" enctype="multipart/form-data">
+ 
+              <label for="name">Product Name
+                  <input type="text" name="name" id="name" placeholder="Enter Product Name..."/>
+              </label>
+                
+              <label for="description">Product Description
+                  <input type="text" name="description" id="description" placeholder="Enter Product Description..."/>
+              </label>
+                
+              <div class="priqua">
+                <label for="price">Price
+                    <input type="number" name="price"prodQuan id="price" placeholder="Price"/>
+                    
+                </label>
+                  
+                <label for="quantity">Quantity
+                    <input type="number" name="quantity" id="quantity" placeholder="Quantity"/>
+                </label>
+              </div>
+
+              <div class="catimg">
+                  <label for="image">Product Image
+                    <input type="file" name="image" id="image"/>
+                  </label>
+                  
+                  <label for="category">Category
+                      <select name="category" id="category">
+                          <option value="">Category</option>
+
+                          <option value="balm_slider">Balm Slider</option>
+
+                          <option value="balm_sect2">Section 2</option>
+
+                          <option value="balm_shop_prod">Shop Product</option>
+
+                      </select>
+                  </label>
+              </div>
+ 
+              <button id="regProductBtn">SUBMIT</button>
+            </form>
+
+            </div>
+
             <div class="product_grid" id="product_grid">
-                <div class="product_single">
+                <!-- <div class="product_single">
                     <img src="img/img1.jpg" alt="">
                     <h2>LUXOR WRAP GOWN</h2>
                     <div class="priqua">
@@ -201,13 +251,14 @@
                         <button>Edit</button>
                         <button>Delete</button>
                     </div>
-                </div>
+                </div> -->
             </div>
 
         </main>
     </div>
 
     <script src="js/jquery.min.js"></script>
+    <script src="js/product.js"></script>
     <script src="js/main.js"></script>
 </body>
 

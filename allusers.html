@@ -20,12 +20,13 @@
 
 <body>
 
-   
+
 
     <!-- <section> -->
-    <input type="checkbox" id="nav-toggle"> 
+    <input type="checkbox" id="nav-toggle">
     <div class="sidebar" id="sidebar">
         <!-- Feeding from main.js -->
+    </div>
 
     <div class="main_content">
         <header>
@@ -50,61 +51,48 @@
                 </div>
             </div>
         </header>
-      <main>
+        <main>
 
-        <form action="" id="updateUserForm">
+            <form action="" id="updateUserForm">
 
-            <label for="name">User Name
-                <input type="text" name="name" id="name" placeholder="User Name">
-            </label>
-              
-            <label for="password">Password
-                <input type="password" name="password" id="password" placeholder="Password">
-            </label>
-              
-            <label for="email">Email
-                <input type="email" name="email" id="email" placeholder="Email">
-                
-            </label>
-              
-            <label for="phone">Phone Number
-                <input type="text" name="phoneNum" id="phoneNum" placeholder="Phone Number">
-            </label>
+                <label for="name">User Name
+                    <input type="text" name="name" id="name" placeholder="User Name">
+                </label>
 
-            <button type="submit" id="regUserBtn">SUBMIT</button>
-          </form>        
-          <h1>A Table of All Users</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>S/N</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="allUsersView">
-                <tr>
-                    <td>1</td>
-                    <td>Gilead Odo</td>
-                    <td>odogilead@gmail.com</td>
-                    <td>08183406181</td>
-                    <td><a href="#">Edit</a> / <a href="#">Delete</a></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Justice Odo</td>
-                    <td>odojustice@gmail.com</td>
-                    <td>08183406181</td>
-                    <td><a href="#">Edit</a> / <a href="#">Delete</a></td>
-                </tr>
-            </tbody>
-        </table> 
-      </main>
+                <label for="password">Password
+                    <input type="password" name="password" id="password" placeholder="Password">
+                </label>
 
-      <script src="js/jquery.min.js"></script>
-      <script src="js/user.js"></script>
+                <label for="email">Email
+                    <input type="email" name="email" id="email" placeholder="Email">
+
+                </label>
+
+                <label for="phone">Phone Number
+                    <input type="text" name="phone" id="phone" placeholder="Phone Number">
+                </label>
+
+                <button type="submit" id="regUserBtn">SUBMIT</button>
+            </form>
+            <h1>A Table of All Users</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="allUsersView">
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/user.js"></script>
     <script src="js/main.js"></script>
 </body>
 

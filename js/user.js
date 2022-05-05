@@ -1,15 +1,18 @@
 //Variable declaration in jquery
 
 let fName = $('#name'),
-  password = $('#password'),
-  email = $('#email'),
-  phoneNumber = $('#phone'),
+    password = $('#password'),
+    email = $('#email'),
+    phoneNumber = $('#phone'),
 
-  regUserBtn= $('#regUserBtn'),
-  updateUserForm=$("#updateUserForm"),
-  userIndex,
-  users = [],
-  globalIpAddress="http://159.65.21.42:9000";
+    regUserBtn = $('#regUserBtn'),
+    updateUserForm = $("#updateUserForm"),
+    userIndex,
+    users = [],
+    globalIpAddress="http://159.65.21.42:9000";
+
+
+loadUsersData()
 
   //Hide this form and show only when you want to edit data
 updateUserForm.hide()
@@ -74,7 +77,7 @@ regUserBtn.on('click', function () {
 
 //Assign event to a tag which is editBtn
 $('#allUsersView').on('click', '.editBtn', function () {
-    updateUserForm.show()
+  updateUserForm.show()
   userIndex = $(this).attr('indexData');
 
   fName.val(users[userIndex]['name']);
@@ -140,7 +143,7 @@ function loadUsersData() {
 }
 
 function clearForm() {
-    updateUserForm.hide()
+  updateUserForm.hide()
   fName.val('');
   password.val('');
   email.val('');
