@@ -23,7 +23,7 @@ updateProductForm.hide()
 loadProducts();
 //Events in jquery
 regProductBtn.on('click', function () {
-let userObj = {
+let productObj = {
   "name": fName.val(),
   "description": description.val(),
   "price": price.val(),
@@ -37,7 +37,7 @@ if (productIndex == null) {
   $.ajax({
     type: 'POST',
     url: `${globalIpAddress}/create/product`,
-    data: userObj,
+    data: productObj,
     success: function (response) {
         //Authenticating a user
         if(response.error){
@@ -45,26 +45,25 @@ if (productIndex == null) {
         }else{
           alert(`Registration successful, welcome ${response.name}`);
           window.location.href = 'allproducts.html';
-        }
-      
+        } 
     },
     error: function (err) {
       console.log(err.statusText);
     },
   });
 } else {
-
   let updateId = products[productIndex]['_id'];
   $.ajax({
     type: 'PUT',
     url: `${globalIpAddress}/update/product/:${updateId}`,
-    data: userObj,
+    data: productObj,
     success: function (response) {
       if(response.error){
           alert(`Registration Failed, ${response.error}`);
         }else{
           alert(`Update successful, at ${response.success}`);
           loadProducts();
+          window.location.href = 'allproducts.html';
         }
       
     },
