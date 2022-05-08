@@ -1,6 +1,7 @@
 
 //Variable declaration in jquery
-let sideBar = $("#sidebar");
+let sideBar = $("#sidebar"),
+header = $("#header");
 
 sideBar.html(`
 <div class="side_brand">
@@ -23,6 +24,29 @@ sideBar.html(`
 </div>
 `);
 
+header.html('
+
+<h2>
+                <label for="nav-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+
+                <span>DASHBOARD</span>
+            </h2>
+
+            <div class="search_wrapper">
+                <i class="fa-solid fa-search"></i>
+                <input type="search" name="search" id="search" placeholder="search here">
+            </div>
+
+            <div class="user_wrapper">
+                <img src="./img/img9.JPG" alt="">
+                <div>
+                    <h4>Gilead Odo</h4>
+                    <small>Admin</small>
+                </div>
+            </div>
+')
 
 window.onload = function () {
   const uid = sessionStorage.getItem("active");
