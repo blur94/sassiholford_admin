@@ -214,9 +214,9 @@ tbody{
   .search_wrapper {
     display: none;
   }
-.main_content header h2 span{
-display : none;
-}
+  header h2 span {
+    display : none;
+  }
 }
 @media (max-width: 700px) {
   .main_content header .search_wrapper {
