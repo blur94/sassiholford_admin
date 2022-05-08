@@ -1,7 +1,7 @@
 
 //Variable declaration in jquery
 let sideBar = $("#sidebar"),
-header = $("#header");
+    header = $("#header");
 
 sideBar.html(`
 <div class="side_brand">
