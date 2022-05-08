@@ -5,7 +5,7 @@ let fName = $('#name'),
   quantity = $('#quantity'),
   image = $('#image'),
   category = $('#category'),
-  regProductBtn = $('#regProductBtn'),
+  updateProductBtn = $('#updateProductBtn'),
   updateProductForm = $('#updateProductForm'),
   productIndex,
   products = [],
@@ -19,10 +19,10 @@ let fName = $('#name'),
 
 
 //Hide this form and show only when you want to edit data
-updateProductForm.hide()
+// updateProductForm.hide()
 loadProducts();
 //Events in jquery
-regProductBtn.on('click', function () {
+updateProductBtn.on('click', function () {
 let productObj = {
   "name": fName.val(),
   "description": description.val(),
@@ -52,46 +52,101 @@ if (productIndex == null) {
     },
   });
 } else {
-  let updateId = products[productIndex]['_id'];
-  $.ajax({
-    type: 'PUT',
-    url: `${globalIpAddress}/update/product/:${updateId}`,
-    data: productObj,
-    success: function (response) {
-      if(response.error){
-          alert(`Registration Failed, ${response.error}`);
-        }else{
-          alert(`Update successful, at ${response.success}`);
-          loadProducts();
-          window.location.href = 'allproducts.html';
-        }
-      
-    },
-    error: function (err) {
-      alert(err.statusText);
-      console.log();
-    },
-  });
-  productIndex = null;
-  regProductBtn.html('Add Data');
+
 }
+// else {
+  let updateId = products[productIndex]['_id'];
+//   // $.ajax({
+//   //   type: 'PUT',
+//   //   url: `${globalIpAddress}/update/product/${updateId}`,
+//   //   data: productObj,
+//   //   success: function (response) {
+//   //     if(response.error){
+//   //         alert(`Registration Failed, ${response.error}`);
+//   //       }else{
+//   //         alert(`Update successful, at ${response.success}`);
+//   //         loadProducts();
+//   //         window.location.href = 'allproducts.html';
+//         // }
+      
+//   //   },
+//   //   error: function (err) {
+//   //     alert(err.statusText);
+//   //     console.log();
+//   //   },
+//   // });
+//   productIndex = null;
+//   regProductBtn.html('Add Data');
+// };
 
 clearForm();
 loadProducts();
-});
+ });
 
 //Assign event to a tag which is editBtn
+
 $('#product_grid').on('click', '.editBtn', function () {
 updateProductForm.show()
 productIndex = $(this).attr('indexData');
+let updateId = products[productIndex]['_id'];
 
-fName.val(products[productIndex]['name']);
-description.val(products[productIndex]['description']);
-price.val(products[productIndex]['price']);
-quantity.val(products[productIndex]['quantity']);
-image.val(products[productIndex]['image']);
-category.val(products[productIndex]['category']);
-regProductBtn.html('Update Data');
+updateProductForm.html(`
+<h1>Update Product</h1>
+
+<form method="PUT" action="${globalIpAddress}/update/product/${updateId}" enctype="multipart/form-data">
+
+  <label for="name">Product Name
+      <input type="text" name="name" id="name" placeholder="Enter Product Name..." value="${products[productIndex]['name']}"/>
+  </label>
+    
+  <label for="description">Product Description
+      <input type="text" name="description" id="description" placeholder="Enter Product Description..." value="${products[productIndex]['description']}"/>
+  </label>
+    
+  <div class="priqua">
+    <label for="price">Price
+        <input type="number" name="price"prodQuan id="price" placeholder="Price" value="${products[productIndex]['price']}"/>
+        
+    </label>
+      
+    <label for="quantity">Quantity
+        <input type="number" name="quantity" id="quantity" placeholder="Quantity" value="${products[productIndex]['quantity']}"/>
+    </label>
+  </div>
+
+  <div class="catimg">
+      <label for="image">Product Image
+        <input type="file" name="image" id="image" value="${products[productIndex]['image']}"/>
+      </label>
+      
+      <label for="category">Category
+          <select name="category" id="category" value="${products[productIndex]['category']}">
+              <option value="">Category</option>
+
+              <option value="balm_slider">Balm Slider</option>
+
+              <option value="balm_sect2">Section 2</option>
+
+              <option value="balm_shop_prod">Shop Product</option>
+
+          </select>
+      </label>
+  </div>
+
+  <button id="updateBtn">SUBMIT</button>
+</form>
+`)
+
+// fName.val(products[productIndex]['name']);
+// description.val(products[productIndex]['description']);
+// price.val(products[productIndex]['price']);
+// quantity.val(products[productIndex]['quantity']);
+// image.val(products[productIndex]['image']);
+// category.val(products[productIndex]['category']);
+
+$('#updateBtn').html('Update Data');
+loadProducts();
+window.location.href = 'allproducts.html';
 });
 
 $('#product_grid').on('click', '.deleteBtn', function () {
@@ -120,7 +175,7 @@ if (shouldDelete) {
 }
 });
 
-  loadProducts()
+loadProducts()
 
 function loadProducts() {
     // load products
@@ -166,4 +221,4 @@ function loadProducts() {
         console.log(err);
       },
     });
-}
+};
