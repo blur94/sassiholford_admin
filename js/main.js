@@ -46,7 +46,7 @@ header.html('
                     <small>Admin</small>
                 </div>
             </div>
-')
+');
 
 window.onload = function () {
   const uid = sessionStorage.getItem("active");
