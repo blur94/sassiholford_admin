@@ -214,7 +214,7 @@ tbody{
   .search_wrapper {
     display: none;
   }
-  header h2 span {
+  .main_content header h2 span {
     display: none;
   }
 }
