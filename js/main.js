@@ -24,8 +24,7 @@ sideBar.html(`
 </div>
 `);
 
-header.html('
-
+header.html(`
 <h2>
                 <label for="nav-toggle">
                     <i class="fa-solid fa-bars"></i>
@@ -46,7 +45,7 @@ header.html('
                     <small>Admin</small>
                 </div>
             </div>
-');
+`);
 
 window.onload = function () {
   const uid = sessionStorage.getItem("active");
