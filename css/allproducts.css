@@ -24,13 +24,14 @@
   box-shadow: var(--box-shadow);
   margin-bottom: 1rem;
 }
-.product_single .edbtns button {
+.product_single .edbtns a {
   padding: 0.1rem;
   box-shadow: var(--box-shadow);
   border: none;
   border-radius: 10px;
   color: white;
   font-size: 1.3rem;
+  text-align: center;
   -webkit-text-stroke: 1px var(--main-color);
 }
 .product_single .edbtns {
@@ -63,4 +64,7 @@
 .product_single .priqua label p {
   font-size: 1.5rem;
   font-weight: 900;
+}
+#updateProductForm{
+  margin-bottom: 2rem;
 }

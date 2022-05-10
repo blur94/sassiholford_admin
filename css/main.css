@@ -211,6 +211,9 @@ tbody{
   .cards{
     grid-template-columns: 100%;
   }
+  .product_single{
+    grid-template-columns: 100%;
+  }
   .search_wrapper {
     display: none;
   }

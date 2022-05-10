@@ -19,7 +19,8 @@ main input {
   color: var(--text-grey);
 }
 main input:hover {
-  background-color: var(--main-color);
+  background-color: black;
+  color: white;
 }
 .main_content main label {
   margin: 1rem;
@@ -49,6 +50,6 @@ main button {
   box-shadow: var(--box-shadow);
 }
 main button:hover{
-    background-color: var(--main-color);
-    color: white;
+  background-color: black;
+  color: white;
 }

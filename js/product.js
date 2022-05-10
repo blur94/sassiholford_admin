@@ -86,14 +86,14 @@ loadProducts();
 //Assign event to a tag which is editBtn
 
 $('#product_grid').on('click', '.editBtn', function () {
-updateProductForm.show()
+// updateProductForm.show()
 productIndex = $(this).attr('indexData');
 let updateId = products[productIndex]['_id'];
 
 updateProductForm.html(`
 <h1>Update Product</h1>
 
-<form method="PUT" action="${globalIpAddress}/update/product/${updateId}" enctype="multipart/form-data">
+<form method="PUT" action="${globalIpAddress}/update/product/${updateId}" enctype="multipart/form-data" >
 
   <label for="name">Product Name
       <input type="text" name="name" id="name" placeholder="Enter Product Name..." value="${products[productIndex]['name']}"/>
@@ -133,7 +133,7 @@ updateProductForm.html(`
       </label>
   </div>
 
-  <button id="updateBtn">SUBMIT</button>
+  <button type="submit" id="updateBtn">SUBMIT</button>
 </form>
 `)
 
@@ -145,8 +145,7 @@ updateProductForm.html(`
 // category.val(products[productIndex]['category']);
 
 $('#updateBtn').html('Update Data');
-loadProducts();
-window.location.href = 'allproducts.html';
+
 });
 
 $('#product_grid').on('click', '.deleteBtn', function () {
@@ -159,7 +158,7 @@ if (shouldDelete) {
 
   $.ajax({
     type: 'DELETE',
-    url: `${globalIpAddress}/product/:${deleteId}`,
+    url: `${globalIpAddress}/product/${deleteId}`,
     success: function (response) {
       console.log(response);
       alert('User Deleted');
@@ -202,8 +201,8 @@ function loadProducts() {
                         </label>
                     </div>
                     <div class="edbtns">
-                        <button class="editBtn" indexData="${index}">Edit</button>
-                        <button indexData="${index}" class="deleteBtn">Delete</button>
+                        <a href="#"  class="editBtn" indexData="${index}">Edit</a>
+                        <a href="#" indexData="${index}" class="deleteBtn">Delete</a>
                     </div>
                 </div>`;
             }

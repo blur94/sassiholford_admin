@@ -79,14 +79,6 @@ navBarLinksIDs.forEach((id) => {
     handleActiveLink(id);
   });
 });
-
-  
-    // if (stuData != null) {
-    //   products = JSON.parse(stuData);
-    // }
-  
-    // console.log(stuData);
-  // }
   
   function clearForm() {
     fName.val('');
@@ -94,63 +86,3 @@ navBarLinksIDs.forEach((id) => {
     email.val('');
     phoneNumber.val('');
   }
-
-// For Dashboard
-// $("#dash").on('click', function () {
-//   $(this).toggleClass("active")
-//   $("#allUser").removeClass("active")
-//   $("#createUser").removeClass("active")
-//   $("#allProd").removeClass("active")
-//   $("#createProd").removeClass("active")
-//   $("#allOrd").removeClass("active")
-// })
-
-// // For All users
-// $("#allUser").on('click', function () {
-//   $("#dash").removeClass("active")
-//   $(this).addClass("active")
-//   $("#createUser").removeClass("active")
-//   $("#allProd").removeClass("active")
-//   $("#createProd").removeClass("active")
-//   $("#allOrd").removeClass("active")
-// })
-
-// // For Create users
-// $("#createUser").on('click', function () {
-//   $("#dash").removeClass("active")
-//   $("#allUser").removeClass("active")
-//   $(this).addClass("active")
-//   $("#allProd").removeClass("active")
-//   $("#createProd").removeClass("active")
-//   $("#allOrd").removeClass("active")
-// })
-
-// // for all products
-// $("#allProd").on("click", function () {
-//   $("#dash").removeClass("active");
-//   $("#allUser").removeClass("active");
-//   $("#createUser").removeClass("active");
-//   $(this).addClass("active");
-//   $("#createProd").removeClass("active");
-//   $("#allOrd").removeClass("active");
-// });
-
-// // for create products
-// $("#createProd").on("click", function () {
-//   $("#dash").removeClass("active");
-//   $("#allUser").removeClass("active");
-//   $("#createUser").removeClass("active");
-//   $("#allProd").removeClass("active");
-//   $(this).addClass("active");
-//   $("#allOrd").removeClass("active");
-// });
-
-// // for all orders
-// $("#allOrd").on("click", function () {
-//   $("#dash").removeClass("active");
-//   $("#allUser").removeClass("active");
-//   $("#createUser").removeClass("active");
-//   $("#allProd").removeClass("active");
-//   $("#createProd").removeClass("active");
-//   $(this).addClass("active");
-// });
